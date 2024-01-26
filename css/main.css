@@ -1,5 +1,40 @@
+/* Common */ 
 body{
      font-family: 'Open Sans', sans-serif;
-    font-size: 100px;
-    color: tomato;
+     color:#333;
+     font-size: 16px;
+     font-weight: 400;
+     line-height: 1.4;
+}
+
+img{
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+
+/* Header */
+header{
+ background-color:#f6f5f0;
+ border-bottom: 1px solid #c8c8c8;
+}
+
+header .inner{
+    width: 1100px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    
+    
+
+}
+header .logo{
+    height: 75px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    margin: auto;
+   
 }
