@@ -15,3 +15,27 @@ textInput.addEventListener('blur', function () {
   search.classList.remove('focused');
   textInput.setAttribute('placeholder', '');
 });
+
+const badgeEl = document.querySelector('header .badges');
+window.addEventListener(
+  'scroll',
+  _.throttle(function () {
+    console.log(window.scrollY);
+    if (window.scrollY > 1500) {
+      //badge숨기기
+      badgeEl.style.display = 'none';
+      // gsap.to(요소,지속시간,옵션);
+      gsap.to(badgeEl, 0.6, {
+        opacity: 0,
+        display: 'none',
+      });
+    } else {
+      //badge 보이기
+      badgeEl.style.display = 'block';
+      gsap.to(badgeEl, 0.6, {
+        opacity: 1,
+        display: 'block',
+      });
+    }
+  }, 300)
+);
