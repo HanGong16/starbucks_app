@@ -299,6 +299,7 @@ header .badges .badge{
     position: absolute;
     bottom:0;
     left: 275px;
-    
 }
-
+.visual .fade-in{
+    opacity: 0;
+}
