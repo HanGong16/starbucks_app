@@ -72,3 +72,23 @@ new Swiper('.promotion .swiper', {
     nextEl: '.promotion .swiper-button-next',
   },
 });
+
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+const promotionIcon = promotionToggleBtn.querySelector(
+  '.material-symbols-outlined'
+);
+
+let isHidePromotion = false;
+promotionToggleBtn.addEventListener('click', function () {
+  isHidePromotion = !isHidePromotion;
+  if (isHidePromotion) {
+    promotionEl.classList.add('hide');
+    promotionEl.style.display = 'none';
+    promotionIcon.innerHTML = 'expand_circle_down';
+  } else {
+    promotionEl.classList.remove('hide');
+    promotionEl.style.display = 'block';
+    promotionIcon.innerHTML = 'expand_circle_up';
+  }
+});
