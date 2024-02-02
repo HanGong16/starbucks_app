@@ -73,6 +73,17 @@ new Swiper('.promotion .swiper', {
   },
 });
 
+new Swiper('.awards .swiper', {
+  autoplay: true,
+  slidesPerView: 5,
+  spaceBetween: 30,
+  loop: true,
+  navigation: {
+    prevEl: '.awards .swiper-button-prev',
+    nextEl: '.awards .swiper-button-next',
+  },
+});
+
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 const promotionIcon = promotionToggleBtn.querySelector(
@@ -113,8 +124,8 @@ const spyEls = document.querySelectorAll('section.scroll-spy');
 
 spyEls.forEach((spyEl) => {
   new ScrollMagic.Scene({
-    triggerElement: spyEl, //보여짐 여부를 감시할 요소를 지정
-    triggerHook: 0.8, //
+    triggerElement: spyEl,
+    triggerHook: 0.8,
   })
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
