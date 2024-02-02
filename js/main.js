@@ -15,7 +15,7 @@ textInput.addEventListener('blur', function () {
   search.classList.remove('focused');
   textInput.setAttribute('placeholder', '');
 });
-
+const toTopEl = document.getElementById('to-top');
 const badgeEl = document.querySelector('header .badges');
 window.addEventListener(
   'scroll',
@@ -24,10 +24,14 @@ window.addEventListener(
     if (window.scrollY > 1500) {
       //badge숨기기
       badgeEl.style.display = 'none';
+
       // gsap.to(요소,지속시간,옵션);
       gsap.to(badgeEl, 0.6, {
         opacity: 0,
         display: 'none',
+      });
+      gsap.to(toTopEl, 0.2, {
+        x: 0,
       });
     } else {
       //badge 보이기
@@ -36,9 +40,18 @@ window.addEventListener(
         opacity: 1,
         display: 'block',
       });
+      gsap.to(toTopEl, 0.2, {
+        x: 100,
+      });
     }
   }, 300)
 );
+
+toTopEl.addEventListener('click', () => {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 fadeEls.forEach((fadeEl, index) => {
